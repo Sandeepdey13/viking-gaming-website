@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#111613">
+    <meta
+      name="description"
+      content="Enter the world of the North: explore Viking sagas, legendary characters, and a game-inspired journey through Norse mythology."
+    >
+    <title>Northbound — A Viking Saga</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    >
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="wordmark" href="#home" aria-label="Northbound home">
+        <span class="wordmark-mark" aria-hidden="true">ᚾ</span>
+        <span>NORTHBOUND</span>
+      </a>
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="primary-navigation"
+        aria-label="Open navigation menu"
+      >
+        <span></span><span></span>
+      </button>
+      <nav class="site-nav" id="primary-navigation" aria-label="Main navigation">
+        <a href="#saga">The saga</a>
+        <a href="#characters">Legends</a>
+        <a href="#world">The nine realms</a>
+        <a class="nav-cta" href="#begin">Begin the journey <span aria-hidden="true">↗</span></a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="home" aria-labelledby="hero-title">
+        <div class="hero-art" aria-hidden="true">
+          <div class="sun"></div>
+          <div class="mountain mountain-back"></div>
+          <div class="mountain mountain-front"></div>
+          <div class="water"></div>
+          <div class="longship">
+            <span class="mast"></span>
+            <span class="sail"></span>
+            <span class="hull"></span>
+          </div>
+        </div>
+        <div class="hero-content">
+          <p class="eyebrow"><span></span> A journey through the old north</p>
+          <h1 id="hero-title">The world<br>remembers <em>the brave.</em></h1>
+          <p class="hero-copy">
+            Sagas of gods and mortals. A wild frontier shaped by oath, steel, and the sea.
+            Your story begins where the map ends.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#saga">Explore the saga <span aria-hidden="true">↗</span></a>
+            <a class="text-link" href="#characters">Meet the legends <span aria-hidden="true">↓</span></a>
+          </div>
+        </div>
+        <div class="hero-caption"><span>01 / 09</span> Beyond the edge of the known world</div>
+        <div class="hero-coordinate" aria-hidden="true">59° 54′ N &nbsp; 10° 45′ E</div>
+      </section>
+
+      <section class="intro section-wrap" id="saga" aria-labelledby="saga-title">
+        <div class="section-kicker"><span>01</span> THE SAGA</div>
+        <div class="intro-grid">
+          <h2 id="saga-title">Not every legend<br>is <em>written in ink.</em></h2>
+          <div class="intro-copy">
+            <p>
+              It is carried across cold water, whispered beside the fire, and earned one
+              choice at a time. Step into an age of exploration inspired by Norse stories
+              and the people who made them.
+            </p>
+            <a class="underlined-link" href="#world">Discover the world <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+        <div class="saga-cards">
+          <article class="saga-card saga-card-land">
+            <span class="card-number">I</span>
+            <div>
+              <p class="card-label">THE FRONTIER</p>
+              <h3>A land worth<br>fighting for.</h3>
+              <p>Follow the coastline beyond the familiar and find a place to call home.</p>
+            </div>
+            <span class="card-arrow" aria-hidden="true">↗</span>
+          </article>
+          <article class="saga-card saga-card-oath">
+            <span class="card-number">II</span>
+            <div>
+              <p class="card-label">THE OATH</p>
+              <h3>Choose what<br>you stand for.</h3>
+              <p>Alliances are forged in trust. Your word can change the fate of a clan.</p>
+            </div>
+            <span class="card-arrow" aria-hidden="true">↗</span>
+          </article>
+          <article class="saga-card saga-card-legend">
+            <span class="card-number">III</span>
+            <div>
+              <p class="card-label">THE LEGACY</p>
+              <h3>Become a story<br>worth telling.</h3>
+              <p>Every victory leaves a mark. Decide what the skalds will remember.</p>
+            </div>
+            <span class="card-arrow" aria-hidden="true">↗</span>
+          </article>
+        </div>
+      </section>
+
+      <section class="characters section-wrap" id="characters" aria-labelledby="characters-title">
+        <div class="section-kicker"><span>02</span> THE LEGENDS</div>
+        <div class="section-heading">
+          <div>
+            <h2 id="characters-title">Meet the <em>makers of myth.</em></h2>
+            <p>Gods, heroes, and the stories that keep their names alive.</p>
+          </div>
+          <div class="character-controls" role="group" aria-label="Filter characters">
+            <button class="filter-button is-active" type="button" data-filter="all" aria-pressed="true">All legends</button>
+            <button class="filter-button" type="button" data-filter="god" aria-pressed="false">Gods</button>
+            <button class="filter-button" type="button" data-filter="hero" aria-pressed="false">Heroes</button>
+          </div>
+        </div>
+        <div class="character-grid">
+          <article class="character-card" data-kind="god">
+            <div class="character-art odin-art" role="img" aria-label="Illustrated storm clouds and a single raven"></div>
+            <div class="character-info">
+              <span class="character-type">THE ALL-FATHER · GOD</span>
+              <h3>Odin</h3>
+              <p>Seeker of wisdom. Keeper of the ravens. A wanderer with one eye on fate.</p>
+            </div>
+            <span class="character-rune" aria-hidden="true">ᚨ</span>
+          </article>
+          <article class="character-card" data-kind="god">
+            <div class="character-art thor-art" role="img" aria-label="Illustrated lightning over a mountain"></div>
+            <div class="character-info">
+              <span class="character-type">THE THUNDERER · GOD</span>
+              <h3>Thor</h3>
+              <p>Defender of humankind, whose hammer brings thunder to the nine realms.</p>
+            </div>
+            <span class="character-rune" aria-hidden="true">ᚦ</span>
+          </article>
+          <article class="character-card" data-kind="hero">
+            <div class="character-art freyja-art" role="img" aria-label="Illustrated northern lights above a fjord"></div>
+            <div class="character-info">
+              <span class="character-type">LADY OF FOLKVANGR · GODDESS</span>
+              <h3>Freyja</h3>
+              <p>Goddess of love and seiðr, fierce in battle and sovereign in her own right.</p>
+            </div>
+            <span class="character-rune" aria-hidden="true">ᚠ</span>
+          </article>
+          <article class="character-card" data-kind="hero">
+            <div class="character-art shieldmaiden-art" role="img" aria-label="Illustrated shield on a misty battlefield"></div>
+            <div class="character-info">
+              <span class="character-type">THE SHIELDMAIDEN · HERO</span>
+              <h3>The shieldmaiden</h3>
+              <p>A name for the women of legend who chose the shield-wall and fought as warriors.</p>
+            </div>
+            <span class="character-rune" aria-hidden="true">ᛉ</span>
+          </article>
+        </div>
+        <p class="history-note">Norse myths survive in many versions and retellings. These portraits are inspired by the tradition, not a single canon.</p>
+      </section>
+
+      <section class="world" id="world" aria-labelledby="world-title">
+        <div class="world-art" aria-hidden="true">
+          <div class="world-ring ring-one"></div>
+          <div class="world-ring ring-two"></div>
+          <div class="world-ring ring-three"></div>
+          <span class="world-star star-one">✳</span>
+          <span class="world-star star-two">✳</span>
+          <span class="world-star star-three">✳</span>
+        </div>
+        <div class="world-copy">
+          <div class="section-kicker"><span>03</span> THE NINE REALMS</div>
+          <h2 id="world-title">Nine worlds.<br><em>One great tree.</em></h2>
+          <p>
+            At the heart of Norse cosmology stands Yggdrasil, the world tree—its roots
+            and branches joining realms of gods, giants, humans, and the dead.
+          </p>
+          <a class="button button-outline" href="#begin">Enter the myth <span aria-hidden="true">↗</span></a>
+        </div>
+        <p class="world-caption">YGGDRASIL &nbsp; · &nbsp; THE WORLD TREE</p>
+      </section>
+
+      <section class="closing section-wrap" id="begin" aria-labelledby="closing-title">
+        <p class="eyebrow"><span></span> THE NORTH IS CALLING</p>
+        <h2 id="closing-title">Every saga starts<br>with a <em>first step.</em></h2>
+        <p>Pick up the thread. Find your way through the stories of the old north.</p>
+        <a class="button button-primary" href="#home">Return to the beginning <span aria-hidden="true">↑</span></a>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="wordmark" href="#home">
+        <span class="wordmark-mark" aria-hidden="true">ᚾ</span>
+        <span>NORTHBOUND</span>
+      </a>
+      <p>A student concept project inspired by Viking history and Norse mythology.</p>
+      <a class="back-to-top" href="#home">BACK TO TOP ↑</a>
+      <span class="copyright">© <span id="current-year"></span> NORTHBOUND</span>
+    </footer>
+  </body>
+</html>
