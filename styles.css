@@ -1,14 +1,14 @@
 :root {
   color-scheme: dark;
-  --ink: #e9e7df;
-  --muted: #a4a69e;
-  --paper: #111613;
-  --panel: #1a211c;
-  --line: rgba(233, 231, 223, 0.16);
-  --gold: #c99a5c;
+  --ink: #e8f4f2;
+  --muted: #91a6a7;
+  --paper: #081116;
+  --panel: #0e1b21;
+  --line: rgba(144, 214, 208, 0.18);
+  --gold: #79e4d1;
   --rust: #a8563e;
   --serif: "Playfair Display", Georgia, serif;
-  --sans: "DM Sans", Arial, sans-serif;
+  --sans: "Space Grotesk", "DM Sans", Arial, sans-serif;
 }
 
 * {
@@ -21,7 +21,9 @@ html {
 
 body {
   margin: 0;
-  background: var(--paper);
+  background:
+    radial-gradient(ellipse at 50% 0, rgba(28, 73, 78, 0.15), transparent 40%),
+    var(--paper);
   color: var(--ink);
   font-family: var(--sans);
   font-size: 15px;
@@ -49,7 +51,9 @@ button {
   align-items: center;
   justify-content: space-between;
   padding: 0 7.2%;
-  border-bottom: 1px solid rgba(233, 231, 223, 0.12);
+  border-bottom: 1px solid rgba(151, 231, 219, 0.16);
+  background: linear-gradient(180deg, rgba(7, 15, 20, 0.46), transparent);
+  backdrop-filter: blur(12px);
 }
 
 .wordmark {
@@ -113,15 +117,15 @@ button {
   overflow: hidden;
   padding: 120px 11% 90px;
   isolation: isolate;
-  background: #18211f;
+  background: #09171c;
 }
 
 .hero::after {
   position: absolute;
   z-index: -1;
   background:
-    linear-gradient(90deg, rgba(13, 19, 17, 0.96) 1%, rgba(13, 19, 17, 0.77) 38%, rgba(13, 19, 17, 0.15) 100%),
-    linear-gradient(0deg, rgba(13, 19, 17, 0.53), transparent 28%, transparent 76%, rgba(13, 19, 17, 0.14));
+    linear-gradient(90deg, rgba(5, 14, 19, 0.94) 0%, rgba(5, 14, 19, 0.76) 36%, rgba(5, 14, 19, 0.1) 100%),
+    linear-gradient(0deg, rgba(5, 14, 19, 0.69), transparent 34%, rgba(5, 14, 19, 0.22));
   content: "";
   inset: 0;
 }
@@ -130,92 +134,73 @@ button {
   position: absolute;
   z-index: -2;
   overflow: hidden;
-  background: linear-gradient(180deg, #313c3b 0%, #71736b 44%, #b47d59 69%, #3c4945 70%, #1c2927 100%);
+  background: #102329;
   inset: 0;
 }
 
-.sun {
+.hero-art::after {
   position: absolute;
-  top: 22%;
-  right: 24%;
-  width: clamp(120px, 17vw, 230px);
+  background:
+    linear-gradient(rgba(121, 228, 209, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(121, 228, 209, 0.055) 1px, transparent 1px);
+  background-size: 64px 64px;
+  content: "";
+  inset: 0;
+  mask-image: linear-gradient(90deg, transparent, #000 48%, #000);
+}
+
+.hero-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 55% center;
+  opacity: 0.78;
+  filter: saturate(0.82) contrast(1.08);
+}
+
+.hero-orbit {
+  position: absolute;
+  top: 50%;
+  right: 12%;
+  width: clamp(220px, 32vw, 430px);
   aspect-ratio: 1;
+  border: 1px solid rgba(127, 235, 219, 0.54);
   border-radius: 50%;
-  background: #d5a473;
-  box-shadow: 0 0 100px 40px rgba(213, 164, 115, 0.19);
+  box-shadow: 0 0 70px rgba(72, 219, 204, 0.14), inset 0 0 60px rgba(72, 219, 204, 0.1);
+  transform: translateY(-42%);
 }
 
-.mountain {
+.hero-orbit::before,
+.hero-orbit::after {
   position: absolute;
-  right: -5%;
-  bottom: 23%;
-  width: 90%;
-  height: 50%;
-  clip-path: polygon(0 100%, 14% 48%, 24% 69%, 42% 5%, 53% 55%, 68% 18%, 81% 57%, 91% 35%, 100% 100%);
+  border: 1px solid rgba(127, 235, 219, 0.4);
+  border-radius: 50%;
+  content: "";
+  inset: 12%;
 }
 
-.mountain-back {
-  right: 4%;
-  bottom: 25%;
-  background: linear-gradient(145deg, #90928a, #596563 58%, #3c4b48);
-  opacity: 0.73;
+.hero-orbit::after {
+  border-color: rgba(127, 235, 219, 0.19);
+  inset: -12%;
 }
 
-.mountain-front {
-  bottom: 21%;
-  height: 42%;
-  background: linear-gradient(145deg, #6d7872, #354340 58%, #202e2b);
-  clip-path: polygon(0 100%, 13% 34%, 23% 64%, 40% 14%, 55% 72%, 69% 29%, 79% 63%, 90% 17%, 100% 100%);
-}
-
-.water {
+.hero-signal {
   position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  height: 24%;
-  background: repeating-linear-gradient(176deg, rgba(215, 187, 153, 0.14) 0 1px, transparent 1px 13px), linear-gradient(#384846, #172421);
+  top: 28%;
+  right: 9%;
+  color: rgba(208, 250, 242, 0.87);
+  font-size: 8px;
+  letter-spacing: 0.15em;
+  line-height: 1.8;
+  text-align: right;
 }
 
-.longship {
-  position: absolute;
-  right: 15%;
-  bottom: 20%;
-  width: clamp(160px, 23vw, 310px);
-  height: 155px;
-  filter: drop-shadow(0 12px 12px rgba(0, 0, 0, 0.34));
-}
-
-.hull {
-  position: absolute;
-  right: 0;
-  bottom: 24px;
-  left: 0;
-  height: 28px;
-  border-radius: 0 0 50% 50%;
-  background: repeating-linear-gradient(90deg, #49372b 0 18px, #79583e 18px 22px);
-  clip-path: polygon(0 0, 100% 0, 91% 65%, 79% 100%, 22% 100%, 9% 65%);
-}
-
-.mast {
-  position: absolute;
-  bottom: 47px;
-  left: 49%;
-  width: 4px;
-  height: 123px;
-  background: #3a3027;
-}
-
-.sail {
-  position: absolute;
-  bottom: 64px;
-  left: 21%;
-  width: 58%;
-  height: 95px;
-  border: 2px solid rgba(225, 214, 189, 0.63);
-  background: repeating-linear-gradient(90deg, #bba985 0 24px, #725e4c 24px 27px);
-  clip-path: polygon(0 0, 100% 9%, 88% 100%, 9% 90%);
-  opacity: 0.8;
+.eyebrow b {
+  color: var(--gold);
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
 }
 
 .hero-content {
@@ -330,7 +315,7 @@ h2 em {
 .hero-coordinate {
   position: absolute;
   bottom: 34px;
-  color: #c4c6bf;
+  color: #b6d2d0;
   font-size: 9px;
 }
 
@@ -345,6 +330,16 @@ h2 em {
 
 .hero-coordinate {
   right: 7.2%;
+}
+
+.hero-coordinate i {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  margin: 0 5px 1px 12px;
+  border-radius: 50%;
+  background: var(--gold);
+  box-shadow: 0 0 12px var(--gold);
 }
 
 .section-wrap {
@@ -410,6 +405,110 @@ h2 {
   gap: 14px;
 }
 
+.voyage-feature {
+  display: grid;
+  grid-template-columns: 1.12fr 0.88fr;
+  min-height: 340px;
+  margin-bottom: 20px;
+  border: 1px solid var(--line);
+  background: linear-gradient(120deg, rgba(20, 43, 48, 0.77), rgba(11, 23, 28, 0.94));
+}
+
+.voyage-photo {
+  position: relative;
+  min-height: 340px;
+  overflow: hidden;
+}
+
+.voyage-photo::after {
+  position: absolute;
+  background: linear-gradient(90deg, transparent 62%, rgba(12, 27, 31, 0.66)), linear-gradient(0deg, rgba(7, 17, 22, 0.48), transparent 50%);
+  content: "";
+  inset: 0;
+  pointer-events: none;
+}
+
+.voyage-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 54% center;
+  filter: saturate(0.78) contrast(1.05);
+  transition: transform 650ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.voyage-feature:hover .voyage-photo img {
+  transform: scale(1.04);
+}
+
+.image-index,
+.art-tag {
+  position: absolute;
+  z-index: 1;
+  padding: 6px 9px;
+  border: 1px solid rgba(146, 230, 215, 0.45);
+  background: rgba(5, 15, 20, 0.7);
+  color: #b7eee3;
+  font-size: 8px;
+  letter-spacing: 0.16em;
+}
+
+.image-index {
+  bottom: 20px;
+  left: 20px;
+}
+
+.image-corners {
+  position: absolute;
+  z-index: 1;
+  top: 16px;
+  right: 16px;
+  width: 34px;
+  height: 34px;
+  border-top: 1px solid var(--gold);
+  border-right: 1px solid var(--gold);
+}
+
+.voyage-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: clamp(26px, 4vw, 58px);
+}
+
+.voyage-copy h3 {
+  margin: 12px 0;
+  font-family: var(--serif);
+  font-size: clamp(29px, 3.2vw, 43px);
+  font-weight: 500;
+  letter-spacing: -0.035em;
+  line-height: 1.12;
+}
+
+.voyage-copy > p:not(.card-label) {
+  max-width: 370px;
+  margin-bottom: 24px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.voyage-coordinates {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+  color: #8fa9a9;
+  font-size: 8px;
+  letter-spacing: 0.13em;
+}
+
+.voyage-coordinates span {
+  color: var(--gold);
+}
+
 .saga-card {
   position: relative;
   display: flex;
@@ -418,14 +517,15 @@ h2 {
   justify-content: space-between;
   overflow: hidden;
   padding: 21px 23px 26px;
-  background-color: #24302c;
+  border: 1px solid rgba(149, 229, 215, 0.16);
+  background-color: #132328;
   isolation: isolate;
 }
 
 .saga-card::before {
   position: absolute;
   z-index: -1;
-  background: linear-gradient(0deg, rgba(13, 18, 16, 0.96), rgba(13, 18, 16, 0.24) 77%);
+  background: linear-gradient(0deg, rgba(5, 14, 18, 0.97), rgba(5, 14, 18, 0.1) 90%);
   content: "";
   inset: 0;
 }
@@ -433,26 +533,35 @@ h2 {
 .saga-card::after {
   position: absolute;
   z-index: -2;
-  background: linear-gradient(135deg, #697568, #22312d 55%, #8a674d);
+  background: linear-gradient(135deg, rgba(121, 228, 209, 0.2), transparent 55%);
   content: "";
   inset: 0;
-  transition: transform 450ms ease;
+  transition: opacity 450ms ease;
 }
 
 .saga-card:hover::after {
-  transform: scale(1.05);
+  opacity: 0.2;
 }
 
-.saga-card-land::after {
-  background: linear-gradient(155deg, #b1835b 3%, #58665c 35%, #202e2c 80%);
+.saga-image {
+  position: absolute;
+  z-index: -3;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.68) brightness(0.8);
+  transition: transform 500ms ease, filter 500ms ease;
 }
 
-.saga-card-oath::after {
-  background: linear-gradient(140deg, #788078, #34433c 42%, #6f4835);
+.saga-card:hover .saga-image {
+  filter: saturate(0.95) brightness(0.94);
+  transform: scale(1.06);
 }
 
+.saga-card-land::after,
+.saga-card-oath::after,
 .saga-card-legend::after {
-  background: linear-gradient(150deg, #727a82, #2d3d42 50%, #a67d55);
+  background: linear-gradient(145deg, rgba(121, 228, 209, 0.13), transparent 58%);
 }
 
 .card-number {
@@ -465,6 +574,7 @@ h2 {
   margin-bottom: 11px;
   color: var(--gold);
   font-size: 9px;
+  letter-spacing: 0.18em;
 }
 
 .saga-card h3 {
@@ -491,7 +601,12 @@ h2 {
 .characters {
   padding-top: 105px;
   padding-bottom: 125px;
-  background: #171d19;
+  border-top: 1px solid rgba(121, 228, 209, 0.1);
+  background:
+    linear-gradient(rgba(121, 228, 209, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(121, 228, 209, 0.025) 1px, transparent 1px),
+    #0b151a;
+  background-size: 48px 48px;
 }
 
 .section-heading {
@@ -533,7 +648,7 @@ h2 {
 .filter-button.is-active {
   border-color: var(--gold);
   background: var(--gold);
-  color: #191a16;
+  color: #061310;
 }
 
 .character-grid {
@@ -545,8 +660,14 @@ h2 {
 .character-card {
   position: relative;
   overflow: hidden;
-  background: #202722;
-  transition: opacity 180ms ease, transform 180ms ease;
+  border: 1px solid rgba(151, 231, 219, 0.16);
+  background: linear-gradient(160deg, #14262b, #0d191e);
+  transition: opacity 180ms ease, transform 180ms ease, border-color 180ms ease;
+}
+
+.character-card:hover {
+  border-color: rgba(121, 228, 209, 0.58);
+  transform: translateY(-4px);
 }
 
 .character-card.is-hidden {
@@ -557,8 +678,28 @@ h2 {
   position: relative;
   height: 240px;
   overflow: hidden;
-  background-color: #34413c;
+  background-color: #14262b;
   isolation: isolate;
+}
+
+.character-art img {
+  position: absolute;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.62) brightness(0.75);
+  transition: filter 450ms ease, transform 600ms ease;
+}
+
+.character-card:hover .character-art img {
+  filter: saturate(0.95) brightness(0.9);
+  transform: scale(1.05);
+}
+
+.art-tag {
+  top: 14px;
+  left: 14px;
 }
 
 .character-art::before,
@@ -581,35 +722,30 @@ h2 {
 
 .odin-art::before {
   background:
-    radial-gradient(ellipse at 68% 28%, rgba(195, 160, 112, 0.54), transparent 22%),
-    radial-gradient(ellipse at 38% 62%, #536057 0 7%, transparent 8%),
-    linear-gradient(152deg, #85827a, #49544e 48%, #202b29);
+    linear-gradient(140deg, rgba(101, 80, 171, 0.2), transparent 45%),
+    linear-gradient(152deg, #27384a, #14252b 65%, #101a20);
 }
 
 .odin-art::after {
-  background:
-    radial-gradient(ellipse at 39% 61%, #111917 0 6%, transparent 6.5%),
-    linear-gradient(0deg, rgba(20, 26, 23, 0.84), transparent 71%);
+  background: linear-gradient(0deg, rgba(7, 17, 22, 0.58), transparent 75%);
 }
 
 .thor-art::before {
   background:
-    linear-gradient(121deg, transparent 45%, rgba(219, 194, 139, 0.78) 45.4%, transparent 47%),
-    radial-gradient(ellipse at 71% 28%, #879083, transparent 32%),
-    linear-gradient(150deg, #87928c, #3e4c48 50%, #222b29);
+    linear-gradient(125deg, transparent 46%, rgba(121, 228, 209, 0.34) 46.3%, transparent 47.1%),
+    linear-gradient(150deg, #3a5261, #1d343b 60%, #142128);
 }
 
 .freyja-art::before {
   background:
-    radial-gradient(ellipse at 44% 15%, rgba(135, 174, 143, 0.8), transparent 25%),
-    radial-gradient(ellipse at 70% 22%, rgba(98, 137, 125, 0.7), transparent 20%),
-    linear-gradient(155deg, #435451, #253635 49%, #715943);
+    linear-gradient(155deg, rgba(125, 98, 189, 0.24), transparent 54%),
+    linear-gradient(155deg, #435451, #253635 49%, #4f3d66);
 }
 
 .shieldmaiden-art::before {
   background:
-    radial-gradient(ellipse at 70% 36%, rgba(188, 144, 99, 0.67), transparent 28%),
-    linear-gradient(160deg, #747a72, #404c45 47%, #28322f);
+    linear-gradient(160deg, rgba(197, 138, 82, 0.22), transparent 50%),
+    linear-gradient(160deg, #555a4f, #283731 57%, #19241f);
 }
 
 .character-info {
@@ -657,13 +793,13 @@ h2 {
   min-height: 620px;
   align-items: center;
   overflow: hidden;
-  background: radial-gradient(ellipse at 75% 50%, #35473f, #1d2925 41%, #111613 73%);
+  background: radial-gradient(ellipse at 75% 50%, #203c3d, #112329 43%, #081116 75%);
   isolation: isolate;
 }
 
 .world-art {
   position: absolute;
-  z-index: -1;
+  z-index: 0;
   top: 50%;
   right: 7%;
   width: min(53vw, 660px);
@@ -671,12 +807,24 @@ h2 {
   transform: translateY(-50%);
 }
 
+.world-image {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  opacity: 0.28;
+  filter: hue-rotate(15deg) saturate(0.7);
+  mask-image: radial-gradient(circle, #000 18%, transparent 70%);
+}
+
 .world-ring {
   position: absolute;
   top: 50%;
   left: 50%;
   aspect-ratio: 1;
-  border: 1px solid rgba(201, 154, 92, 0.32);
+  border: 1px solid rgba(121, 228, 209, 0.32);
   border-radius: 50%;
   transform: translate(-50%, -50%);
 }
@@ -691,12 +839,13 @@ h2 {
 
 .ring-three {
   width: 38%;
-  border-color: rgba(201, 154, 92, 0.6);
-  box-shadow: 0 0 60px rgba(201, 154, 92, 0.13);
+  border-color: rgba(121, 228, 209, 0.62);
+  box-shadow: 0 0 60px rgba(121, 228, 209, 0.16);
 }
 
 .world-star {
   position: absolute;
+  z-index: 1;
   color: var(--gold);
   font-size: 15px;
 }
@@ -717,6 +866,8 @@ h2 {
 }
 
 .world-copy {
+  position: relative;
+  z-index: 1;
   width: min(510px, 48%);
   margin-left: 11%;
   padding: 95px 0;
@@ -746,6 +897,7 @@ h2 {
 
 .world-caption {
   position: absolute;
+  z-index: 1;
   right: 7%;
   bottom: 28px;
   color: #a5a89f;
@@ -759,6 +911,8 @@ h2 {
   align-items: center;
   justify-content: center;
   text-align: center;
+  background:
+    radial-gradient(ellipse at 50% 70%, rgba(38, 101, 97, 0.13), transparent 60%);
 }
 
 .closing .eyebrow {
@@ -779,14 +933,19 @@ h2 {
 .site-footer {
   display: grid;
   min-height: 100px;
-  grid-template-columns: 1fr 2fr 1fr auto;
+  grid-template-columns: auto 1fr auto;
+  grid-template-areas:
+    "brand note top"
+    "credits credits credits"
+    "copy copy copy";
   align-items: center;
-  gap: 20px;
+  gap: 12px 24px;
   padding: 20px 7.2%;
   border-top: 1px solid var(--line);
 }
 
 .site-footer .wordmark {
+  grid-area: brand;
   font-size: 10px;
 }
 
@@ -795,16 +954,41 @@ h2 {
 }
 
 .site-footer p {
+  grid-area: note;
   margin: 0;
-  color: #93978e;
+  color: #839a9b;
   font-size: 10px;
+}
+
+.site-footer .image-credits {
+  grid-area: credits;
+  padding-top: 12px;
+  border-top: 1px solid rgba(144, 214, 208, 0.1);
+  color: #708789;
+  font-size: 9px;
+  line-height: 1.9;
+}
+
+.image-credits a {
+  color: #a7cfca;
+  text-decoration: underline;
+  text-decoration-color: rgba(121, 228, 209, 0.38);
+  text-underline-offset: 3px;
 }
 
 .back-to-top,
 .copyright {
-  color: #aeb1a9;
+  color: #9eb9b8;
   font-size: 8px;
   white-space: nowrap;
+}
+
+.back-to-top {
+  grid-area: top;
+}
+
+.copyright {
+  grid-area: copy;
 }
 
 @media (max-width: 900px) {
@@ -1067,4 +1251,143 @@ h2 {
     scroll-behavior: auto !important;
     transition-duration: 0.01ms !important;
   }
+}
+
+@media (max-width: 900px) {
+  .voyage-feature {
+    grid-template-columns: 1fr 0.9fr;
+  }
+
+  .voyage-photo {
+    min-height: 300px;
+  }
+
+  .site-footer {
+    grid-template-columns: auto 1fr auto;
+  }
+
+  .site-footer > p:not(.image-credits) {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero {
+    min-height: 780px;
+    min-height: 100svh;
+    padding: 130px 7% 100px;
+  }
+
+  .hero-image {
+    object-position: 63% center;
+  }
+
+  .hero-orbit {
+    top: 57%;
+    right: -24%;
+    width: 68vw;
+    opacity: 0.54;
+  }
+
+  .hero-signal {
+    top: auto;
+    right: 7%;
+    bottom: 112px;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+  }
+
+  .hero .eyebrow {
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 7px;
+  }
+
+  .hero .eyebrow > span {
+    margin-top: 8px;
+  }
+
+  .hero h1 {
+    max-width: 440px;
+    font-size: clamp(54px, 13.2vw, 75px);
+  }
+
+  .hero-caption {
+    left: 7%;
+    bottom: 34px;
+    max-width: 57%;
+    font-size: 8px;
+    line-height: 1.7;
+  }
+
+  .hero-coordinate {
+    right: 7%;
+    bottom: 82px;
+    max-width: 86%;
+    font-size: 7px;
+    line-height: 1.8;
+    text-align: right;
+  }
+
+  .signal-label {
+    display: none;
+  }
+
+  .voyage-feature {
+    grid-template-columns: 1fr;
+    margin-bottom: 15px;
+  }
+
+  .voyage-photo {
+    min-height: 250px;
+    max-height: 290px;
+  }
+
+  .voyage-copy {
+    padding: 26px 23px;
+  }
+
+  .voyage-coordinates {
+    font-size: 7px;
+  }
+
+  .saga-card {
+    min-height: 245px;
+  }
+
+  .character-art {
+    height: 245px;
+  }
+
+  .world-art {
+    opacity: 0.78;
+  }
+
+  .world-image {
+    opacity: 0.19;
+  }
+
+  .site-footer {
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      "brand top"
+      "credits credits"
+      "copy copy";
+    gap: 16px 10px;
+    padding: 21px 7%;
+  }
+
+  .site-footer .image-credits {
+    display: block;
+    font-size: 8px;
+  }
+}
+
+:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 4px;
 }

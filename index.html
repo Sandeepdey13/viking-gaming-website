@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#111613">
+    <meta name="theme-color" content="#081116">
     <meta
       name="description"
       content="Enter the world of the North: explore Viking sagas, legendary characters, and a game-inspired journey through Norse mythology."
@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     >
     <link rel="stylesheet" href="styles.css">
@@ -44,18 +44,12 @@
     <main>
       <section class="hero" id="home" aria-labelledby="hero-title">
         <div class="hero-art" aria-hidden="true">
-          <div class="sun"></div>
-          <div class="mountain mountain-back"></div>
-          <div class="mountain mountain-front"></div>
-          <div class="water"></div>
-          <div class="longship">
-            <span class="mast"></span>
-            <span class="sail"></span>
-            <span class="hull"></span>
-          </div>
+          <img class="hero-image" src="assets/aurora.jpg" alt="">
+          <div class="hero-orbit"></div>
+          <span class="hero-signal">NORTH / 09<br>EXPLORATION ACTIVE</span>
         </div>
         <div class="hero-content">
-          <p class="eyebrow"><span></span> A journey through the old north</p>
+          <p class="eyebrow"><span></span> A journey through the old north <b>— 01.09</b></p>
           <h1 id="hero-title">The world<br>remembers <em>the brave.</em></h1>
           <p class="hero-copy">
             Sagas of gods and mortals. A wild frontier shaped by oath, steel, and the sea.
@@ -66,8 +60,8 @@
             <a class="text-link" href="#characters">Meet the legends <span aria-hidden="true">↓</span></a>
           </div>
         </div>
-        <div class="hero-caption"><span>01 / 09</span> Beyond the edge of the known world</div>
-        <div class="hero-coordinate" aria-hidden="true">59° 54′ N &nbsp; 10° 45′ E</div>
+        <div class="hero-caption"><span>FIELD NOTE 001</span> Past the known frontier</div>
+        <div class="hero-coordinate" aria-hidden="true">59° 54′ N &nbsp; 10° 45′ E <i></i><span class="signal-label">SIGNAL FOUND</span></div>
       </section>
 
       <section class="intro section-wrap" id="saga" aria-labelledby="saga-title">
@@ -83,8 +77,29 @@
             <a class="underlined-link" href="#world">Discover the world <span aria-hidden="true">→</span></a>
           </div>
         </div>
+        <article class="voyage-feature">
+          <div class="voyage-photo">
+            <img
+              src="assets/sea-stallion.jpg"
+              alt="A reconstructed Viking longship under sail during a harbor arrival"
+              loading="lazy"
+            >
+            <span class="image-index">ARCHIVE / 01</span>
+            <span class="image-corners" aria-hidden="true"></span>
+          </div>
+          <div class="voyage-copy">
+            <p class="card-label">THE SEA IS THE FIRST ROAD</p>
+            <h3>Built for a world<br>without borders.</h3>
+            <p>
+              Light, fast, and made to meet the open water, the longship connected
+              distant shores—and carried stories further than anyone could see.
+            </p>
+            <span class="voyage-coordinates">SHIP CLASS // LONGSHIP <span>54° 21′ N</span></span>
+          </div>
+        </article>
         <div class="saga-cards">
           <article class="saga-card saga-card-land">
+            <img class="saga-image" src="assets/peaks.jpg" alt="" loading="lazy">
             <span class="card-number">I</span>
             <div>
               <p class="card-label">THE FRONTIER</p>
@@ -94,6 +109,7 @@
             <span class="card-arrow" aria-hidden="true">↗</span>
           </article>
           <article class="saga-card saga-card-oath">
+            <img class="saga-image" src="assets/viking-longship.jpg" alt="" loading="lazy">
             <span class="card-number">II</span>
             <div>
               <p class="card-label">THE OATH</p>
@@ -103,6 +119,7 @@
             <span class="card-arrow" aria-hidden="true">↗</span>
           </article>
           <article class="saga-card saga-card-legend">
+            <img class="saga-image" src="assets/starlit-mountain.jpg" alt="" loading="lazy">
             <span class="card-number">III</span>
             <div>
               <p class="card-label">THE LEGACY</p>
@@ -129,7 +146,10 @@
         </div>
         <div class="character-grid">
           <article class="character-card" data-kind="god">
-            <div class="character-art odin-art" role="img" aria-label="Illustrated storm clouds and a single raven"></div>
+            <div class="character-art odin-art">
+              <img src="assets/starlit-mountain.jpg" alt="Star-filled sky above a dark mountain range" loading="lazy">
+              <span class="art-tag">VISION / 01</span>
+            </div>
             <div class="character-info">
               <span class="character-type">THE ALL-FATHER · GOD</span>
               <h3>Odin</h3>
@@ -138,7 +158,10 @@
             <span class="character-rune" aria-hidden="true">ᚨ</span>
           </article>
           <article class="character-card" data-kind="god">
-            <div class="character-art thor-art" role="img" aria-label="Illustrated lightning over a mountain"></div>
+            <div class="character-art thor-art">
+              <img src="assets/peaks.jpg" alt="A dramatic mountain range beneath a storm-lit sky" loading="lazy">
+              <span class="art-tag">FORCE / 02</span>
+            </div>
             <div class="character-info">
               <span class="character-type">THE THUNDERER · GOD</span>
               <h3>Thor</h3>
@@ -147,7 +170,10 @@
             <span class="character-rune" aria-hidden="true">ᚦ</span>
           </article>
           <article class="character-card" data-kind="hero">
-            <div class="character-art freyja-art" role="img" aria-label="Illustrated northern lights above a fjord"></div>
+            <div class="character-art freyja-art">
+              <img src="assets/aurora.jpg" alt="Northern lights flowing above a snowy landscape" loading="lazy">
+              <span class="art-tag">SEIÐR / 03</span>
+            </div>
             <div class="character-info">
               <span class="character-type">LADY OF FOLKVANGR · GODDESS</span>
               <h3>Freyja</h3>
@@ -156,7 +182,10 @@
             <span class="character-rune" aria-hidden="true">ᚠ</span>
           </article>
           <article class="character-card" data-kind="hero">
-            <div class="character-art shieldmaiden-art" role="img" aria-label="Illustrated shield on a misty battlefield"></div>
+            <div class="character-art shieldmaiden-art">
+              <img src="assets/viking-battle.jpg" alt="A woman and a fellow fighter in a Viking-age battle reenactment" loading="lazy">
+              <span class="art-tag">SHIELD WALL / 04</span>
+            </div>
             <div class="character-info">
               <span class="character-type">THE SHIELDMAIDEN · HERO</span>
               <h3>The shieldmaiden</h3>
@@ -170,6 +199,7 @@
 
       <section class="world" id="world" aria-labelledby="world-title">
         <div class="world-art" aria-hidden="true">
+          <img class="world-image" src="assets/starlit-mountain.jpg" alt="" loading="lazy">
           <div class="world-ring ring-one"></div>
           <div class="world-ring ring-two"></div>
           <div class="world-ring ring-three"></div>
@@ -203,6 +233,12 @@
         <span>NORTHBOUND</span>
       </a>
       <p>A student concept project inspired by Viking history and Norse mythology.</p>
+      <p class="image-credits">
+        Images: <a href="https://unsplash.com/license" target="_blank" rel="noreferrer">Unsplash</a> ·
+        <a href="https://commons.wikimedia.org/wiki/File:VIKING_LONGSHIP_%22SEA_STALLION%22_ARRIVES_IN_DUBLIN_(1116712951).jpg" target="_blank" rel="noreferrer">William Murphy / CC BY-SA 2.0</a> ·
+        <a href="https://commons.wikimedia.org/wiki/File:Sm%C3%A5_langskip_T%C3%B8nsberg_havn,_Norway_2015-09-25.jpg" target="_blank" rel="noreferrer">Wolfmann / CC BY-SA 4.0</a> ·
+        <a href="https://commons.wikimedia.org/wiki/File:Krigshistorisk_Festival_2023_-_Vikingekamp_16.jpg" target="_blank" rel="noreferrer">Leif Jørgensen / CC BY-SA 4.0</a>
+      </p>
       <a class="back-to-top" href="#home">BACK TO TOP ↑</a>
       <span class="copyright">© <span id="current-year"></span> NORTHBOUND</span>
     </footer>
